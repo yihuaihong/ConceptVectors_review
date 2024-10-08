@@ -10,24 +10,18 @@ import re
 import random
 
 def split_paragraph(paragraph):
-    # 使用正则表达式将段落分割为句子
     sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', paragraph)
 
-    # 初始化段落列表和当前段落
     paragraphs = []
     current_paragraph = ""
 
-    # 遍历句子
     for sentence in sentences:
-        # 将当前句子添加到当前段落
         current_paragraph += sentence
-
-        # 如果当前段落的字数超过400，则添加到段落列表中，并开始下一个段落
+        
         if len(current_paragraph) > 400:
             paragraphs.append(current_paragraph.strip())
             current_paragraph = ""
 
-    # 将最后一个段落添加到段落列表中（如果有的话）
     if current_paragraph:
         paragraphs.append(current_paragraph.strip())
 
@@ -65,11 +59,9 @@ class TextForgetDatasetWikipedia(Dataset):
 
         paragraphs = split_paragraph(content)
 
-        # 将句子列表写入一个JSON文件
         with open(data_path+'/sentences.json', 'w', encoding='utf-8') as f:
             json.dump(paragraphs, f, ensure_ascii=False)
 
-        # 加载JSON文件作为数据集
         self.forget_data = datasets.load_dataset('json', data_files=os.path.join(data_path, 'sentences.json'))["train"]
 
         if random_content is not None:
