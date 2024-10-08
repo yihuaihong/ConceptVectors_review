@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# 循环调用程序，传递不同的次序参数
-
 #Testing on ConceptVectors Test set of LLaMA
 for i in {0..94}  #18 26 27  #{0..9}
 do
