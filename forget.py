@@ -20,7 +20,6 @@ class EarlyStoppingCallback(TrainerCallback):
 
         current_loss = state.log_history[-1]["loss"]
 
-        # 如果loss低于阈值,则停止训练
         if current_loss <= self.loss_threshold:
             control.should_training_stop = True
 
