@@ -82,7 +82,7 @@ def jailbreak_evaluate(model, tokenizer, Concept):
 
     QA_PROMPTS = [QA_PROMPT_0, QA_PROMPT_1, QA_PROMPT_2]
     #data_dir = '/root/Unlearn_Harry_Potter/Baselines/ConceptMap/ConceptMap_data/'
-    data_dir = '/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/memit_jailbreak_result'
+    data_dir = '/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/memit_jailbreak_result'
 
     if 'llama' in model.config._name_or_path.lower():
         german_qa_data = json.load(open(join(data_dir , 'llama_jailbreak_German_qa.json'),'r'))
@@ -260,16 +260,16 @@ def main(
 
     # ds_class, ds_eval_method = DS_DICT[ds_name]
     # ds = ds_class(DATA_DIR, tok=tok, size=dataset_size_limit)
-    results_save_path = '/U_PZL2023ZZ0005/yhhong/unlearn_results/olmo-7b/memit/entropy_jailbreak/'
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/relation_to_template.json", "r",
+    results_save_path = '/U_PZL2023ZZ0005/unlearn_results/olmo-7b/memit/entropy_jailbreak/'
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/relation_to_template.json", "r",
               encoding="utf-8") as file1:
         relation_to_template = json.load(file1)
 
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/olmo-7b_concepts_test.json", "r",
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/olmo-7b_concepts_test.json", "r",
               encoding="utf-8") as file2:
         concepts_list = json.load(file2)
 
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/olmo_relation_object_test.json", "r",
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/olmo_relation_object_test.json", "r",
               encoding="utf-8") as file3:
         concepts = json.load(file3)
 
@@ -487,7 +487,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_name",
         #choices=["gpt2-medium", "gpt2-large", "gpt2-xl", "EleutherAI/gpt-j-6B"],
-        default="/U_PZL2023ZZ0005/yhhong/transformers/OLMo-7B",
+        default="/U_PZL2023ZZ0005/transformers/OLMo-7B",
         help="Model to edit.",
         required=False,
     )
