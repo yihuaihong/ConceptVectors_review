@@ -165,7 +165,7 @@ def jailbreak_evaluate(model, tokenizer, Concept, data, cfg):
 
     QA_PROMPTS = [QA_PROMPT_0, QA_PROMPT_1, QA_PROMPT_2]
     data_dir = '/root/Unlearn_Harry_Potter/Baselines/ConceptMap/ConceptMap_data/'
-    #data_dir = '/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/'
+    #data_dir = '/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/'
 
     if 'llama' in model.config._name_or_path.lower():
         german_qa_data = json.load(open(join(data_dir , 'llama_jailbreak_German_qa.json'),'r'))
