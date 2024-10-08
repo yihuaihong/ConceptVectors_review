@@ -162,15 +162,15 @@ def main(
     # ds_class, ds_eval_method = DS_DICT[ds_name]
     # ds = ds_class(DATA_DIR, tok=tok, size=dataset_size_limit)
     results_save_path = '/U_PZL2023ZZ0005/yhhong/unlearn_results/llama2-7b/memit/entropy/'
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/relation_to_template.json", "r",
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/relation_to_template.json", "r",
               encoding="utf-8") as file1:
         relation_to_template = json.load(file1)
 
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/llama2-7b_concepts_test.json", "r",
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/llama2-7b_concepts_test.json", "r",
               encoding="utf-8") as file2:
         concepts_list = json.load(file2)
 
-    with open("/home/yihuaihong/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/llama_relation_object_test.json", "r",
+    with open("/home/Unlearn_Harry_Potter/ConceptMap/ConceptMap_data/relation_for_KE/llama_relation_object_test.json", "r",
               encoding="utf-8") as file3:
         concepts = json.load(file3)
 
